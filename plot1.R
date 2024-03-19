@@ -2,7 +2,8 @@
 setwd("~/R/Coursera/exdata%2Fdata%2Fhousehold_power_consumption")
 
 #Read in and name the data. define the subset of interest (the two day window 2007-02-01 to 2007-02-02)
-power <- read.table("household_power_consumption.txt",skip=1,sep=";")
+
+power <- read.table("household_power_consumption.txt", na.strings="?"))
 names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
